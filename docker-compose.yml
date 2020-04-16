@@ -1,0 +1,67 @@
+version: '3'
+services:
+    php-fpm:
+        build:
+            context: .
+            dockerfile: ./docker/php-fpm/Dockerfile
+        container_name: "${DOCKER_PREFIX}-app"
+        restart: unless-stopped
+        depends_on:
+            - db
+        environment:
+            SERVICE_NAME: app
+            SERVICE_TAGS: dev
+        working_dir: /var/www
+        user: "1000:1000"
+        volumes:
+            - ./src:/var/www
+            - ./docker/php-fpm/local.ini:/usr/local/etc/php/conf.d/local.ini
+            - ./docker/php-fpm/supervisor-workers.conf:/etc/supervisor/conf.d/supervisor-workers.conf
+            - ./docker/php-fpm/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+        networks:
+            - app-network
+
+    db:
+        image: mysql:8.0.15
+        container_name: "${DOCKER_PREFIX}-db"
+        restart: unless-stopped
+        command:
+            --default-authentication-plugin=mysql_native_password
+            --performance-schema --secure-file-priv=""
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_USER: mysql
+            MYSQL_PASSWORD: mysql
+        volumes:
+            - dbdata:/var/lib/mysql/  # save data from db on local PC
+            - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+            - ./docker/var/log/mysql:/var/log/mysql
+        networks:
+            - app-network
+
+    webserver:
+        image: nginx
+        container_name: "${DOCKER_PREFIX}-nginx"
+        restart: unless-stopped
+        ports:
+            - "8098:80"
+        volumes:
+            - ./src:/var/www
+            - ./docker/nginx/local.conf:/etc/nginx/conf.d/default.conf
+            - ./docker/var/log/nginx:/var/log/nginx
+        depends_on:
+        - php-fpm
+        networks:
+            - app-network
+
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
