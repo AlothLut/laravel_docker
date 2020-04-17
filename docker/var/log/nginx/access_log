@@ -29,3 +29,4 @@
 172.21.0.1 - - [17/Apr/2020:13:36:12 +0000] "GET / HTTP/1.1" 200 2435 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36"
 172.21.0.1 - - [17/Apr/2020:13:36:33 +0000] "GET /wqewq HTTP/1.1" 404 1564 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36"
 172.21.0.1 - - [17/Apr/2020:21:54:22 +0000] "GET /favicon.ico HTTP/1.1" 200 0 "http://laravel.loc:8098/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36"
+172.21.0.1 - - [17/Apr/2020:22:10:01 +0000] "GET /phpmyadmin HTTP/1.1" 404 1564 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36"
