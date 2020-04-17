@@ -1,2 +1,5 @@
 .env
 .vscode
+.idea/
+docker/var/log
+docker/var/data

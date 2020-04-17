@@ -12,7 +12,7 @@ composer_dep: #install composer dependency >> ./vendors
 	docker run --rm -v $(CURDIR):/app composer install
 
 laravel_install: #Create new Laravel project
-	docker-compose exec $(container_php) composer create-project --prefer-dist laravel/laravel src
+	docker-compose exec $(container_php) composer create-project --prefer-dist laravel/laravel
 
 key: #generate APP key
 	docker-compose exec $(container_php) php artisan key:generate
