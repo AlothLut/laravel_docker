@@ -25,7 +25,7 @@
 
 5. `sudo /etc/hosts` set `0.0.0.0 laravel.loc`
 
-6. (http://localhost:8098/)
+6. http://localhost:8098/
 
 ## Other commands:
 
