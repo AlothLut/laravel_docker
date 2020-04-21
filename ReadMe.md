@@ -11,7 +11,7 @@
 
 1. Create file `.env` for prefix.
 
-##Example:
+## Example:
 
     DOCKER_PREFIX=laravel_project
     DB_DATABASE=laravel_project_db
