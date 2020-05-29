@@ -3,5 +3,5 @@
 .vscode
 .idea/
 docker/var/log
-docker/var/data
+docker/var/mysql
 *log

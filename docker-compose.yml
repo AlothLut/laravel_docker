@@ -36,7 +36,7 @@ services:
             MYSQL_USER: mysql
             MYSQL_PASSWORD: mysql
         volumes:
-            - dbdata:/var/lib/mysql/  # save data from db on local PC
+            - dbdata:/var/lib/mysql/
             - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
             - ./docker/var/log/mysql:/var/log/mysql
         networks:
