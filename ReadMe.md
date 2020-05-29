@@ -10,7 +10,8 @@
 ## Install:
 
 1. Create file `.env` for prefix.
-    Example:
+
+## Example:
 
     DOCKER_PREFIX=laravel_project
     DB_DATABASE=laravel_project_db
@@ -22,9 +23,9 @@
 
 4. `make laravel_install`: Install laravel.
 
-5. `sudo /etc/hosts` write `0.0.0.0 laravel.loc`
+5. `sudo /etc/hosts` set `0.0.0.0 laravel.loc`
 
-6. (http://localhost:8098/)
+6. http://localhost:8098/
 
 ## Other commands:
 
