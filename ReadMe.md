@@ -29,9 +29,9 @@
 
 ## Other commands:
 
-`make ownership`: Set ownership
+`make connect_app`: Connect to APP container (php-fpm)
 
-`make stop`: Stop local container
+`make connect_db`: Connect to DB container (mysql)
 
-`make show`: Show all started containers.
+`make connect_server`: Connect to container_server container (nginx)
 

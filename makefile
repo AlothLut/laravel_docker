@@ -1,5 +1,5 @@
 container_php = php-fpm
-container_db = laravel_project-db
+container_db = db
 db_password = 123
 db_name = laravel_project_db
 container_server = webserver
@@ -21,15 +21,6 @@ ownership: #Set ownership
 ###       Work in containers      ###
 ###                               ###
 #####################################
-
-start: #start docker containers
-	docker-compose up --build -d
-
-stop: #stop docker containers
-	docker-compose down
-
-show: #show docker's containers
-	docker ps
 
 connect_app: #Connect to APP container
 	docker-compose exec $(container_php) bash
