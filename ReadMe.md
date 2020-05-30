@@ -16,6 +16,11 @@
     DOCKER_PREFIX=laravel_project
     DB_DATABASE=laravel_project_db
     DB_PASSWORD=123
+    container_php=php-fpm
+    container_db=db
+    db_password=123
+    db_name=laravel_project_db
+    container_server=webserver
 
 2. `docker stop $(docker ps -a -q)`: Stop all containers.
 

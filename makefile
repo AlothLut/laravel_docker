@@ -1,8 +1,4 @@
-container_php = php-fpm
-container_db = db
-db_password = 123
-db_name = laravel_project_db
-container_server = webserver
+include .env
 
 #############################################
 ###                                       ###
