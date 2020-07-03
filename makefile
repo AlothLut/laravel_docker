@@ -12,6 +12,9 @@ laravel_install: #Create new Laravel project
 ownership: #Set ownership
 	sudo chown $(USER):$(USER) . -R
 
+start:
+	sudo docker-compose up -d
+
 #####################################
 ###                               ###
 ###       Work in containers      ###
